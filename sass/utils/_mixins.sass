@@ -1,0 +1,121 @@
+=transition($default-transition)
+	-webkit-transition: $default-transition
+	-o-transition: 		$default-transition
+	transition: 		$default-transition
+
+=border-radius($border-radius)
+	-webkit-border-radius: 	$border-radius
+	border-radius: 			$border-radius
+
+=font($font-s, $font-h, $font-c, $font-f)
+	color: 			$font-c
+	font-size: 		$font-s
+	line-height: 	$font-h
+	font-family: 	$font-f
+
+=transition-duration($one, $two)
+	-webkit-transition-duration: 	$one, $two
+	-moz-transition-duration: 		$one, $two
+	-o-transition-duration: 		$one, $two
+	transition-duration: 			$one, $two
+
+=box-shadow($one, $two, $three, $four, $color)
+	-webkit-box-shadow: $one $two $three $four $color
+	box-shadow: 		$one $two $three $four $color
+
+=transform($variant)
+	-webkit-transform:  $variant
+	-moz-transform: 	$variant
+	-ms-transform: 		$variant
+	-o-transform: 		$variant
+	transform: 			$variant
+
+=center_transform()
+	position: 	absolute
+	left: 		50%
+	top: 		50%
+	+transform(translate(-50%, -50%))
+
+=vertical_center_transform()
+	position: 	absolute
+	left: 		0
+	top: 		50%
+	width: 		100%
+	+transform(translate(0, -50%))
+
+
+=close($height, $width, $color, $height-icon)
+	height: 	$height
+	width: 		$width
+	position: 	relative
+	cursor: 	pointer
+	&:after, &:before
+		content: ''
+		position: 			absolute
+		top: 				45%
+		width: 				100%
+		height: 			$height-icon
+		background-color: 	$color
+	&:after
+		+transform(rotate(45deg))
+	&:before
+		+transform(rotate(-45deg))
+	&:hover
+		&:after, &:before
+			background-color: darken($color, 5%)
+
+
+=flex
+	display: flex
+	display: -webkit-box
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: inline-flex
+	display: -webkit-inline-box
+	display: -webkit-inline-flex
+	display: -ms-inline-flexbox
+
+=display-flex($variant, $wrap)
+	display: flex
+	display: -webkit-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	-ms-flex-flow: $variant $wrap
+	flex-flow: $variant $wrap
+
+=justify-content($side)
+	-webkit-justify-content: $side
+	-webkit-box-pack: 		 $side
+	-ms-flex-pack: 			 $side
+	justify-content: 		 $side
+
+=align-items($side)
+	-webkit-box-align: 	$side
+	-ms-flex-align: 	$side
+	align-items: 		$side
+
+=flex-flow($one, $second, $size)
+	-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	-ms-flex-flow: $one, $second, $size
+	flex-flow: $one, $second, $size
+
+=order($number)
+	-webkit-box-ordinal-group: 	$number
+	-webkit-order: 				$number
+	-ms-flex-order: 			$number
+	order: 						$number
+
+=align-self($side)
+	-webkit-align-self: $side
+	-ms-align-self: 	$side
+	align-self: 		$side
+
+=flex-grow($num)
+	-webkit-flex-grow: 	$num
+	-webkit-box-flex: 	$num
+	-ms-flex-positive: 	$num
+	-ms-flex-positive: 	$num
+	flex-grow: 			$num

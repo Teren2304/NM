@@ -1,0 +1,37 @@
+.container
+	&__login
+		height: 100vh
+.login
+	padding: 10px 20px
+	border: 1px solid #d4d4d4
+	max-width: 320px
+	margin: 10% auto
+	li
+		position: relative
+		margin: 10px 0px
+		.btn
+			padding: 10px 20px
+			font-size: 1em
+		&.logo
+			a
+				font-size: 1.8em	
+				font-weight: 400
+				display: block
+				&::first-letter
+					color: $base-color
+					font-weight: 700
+		p
+			position: absolute
+			right: 0
+			top: 0
+			height: 100%
+			width: 40px
+			background-color: #f4f4f4
+			border: 1px solid #d4d4d4
+			@include flex()
+			@include align-items(center)
+			@include justify-content(center)
+			.fa
+				font-size: 1.1em
+				color: $base-color
+

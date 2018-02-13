@@ -1,0 +1,106 @@
+.menu
+	position: fixed
+	z-index: 2
+	left: 0
+	top: 0
+	bottom: 0
+	width: 270px
+	background-image: url('../img/header_bg.png')
+	color: #d9d9d9
+	overflow-x: hidden
+	overflow-y: auto
+	+transition(all .7s ease)
+	+display-flex(column, nowrap)
+	+justify-content(space-between)
+	&::-webkit-scrollbar 
+		width: 0
+		background-color: transparent
+	a
+		color: inherit
+	.fa
+		text-align: center
+		width: 30px
+		margin-right: 5px
+		font-size: 1em
+	&__category
+		border-top: 1px solid #5b5b5b
+		border-bottom: 1px solid #232323
+		li
+			border-bottom: 1px solid #5b5b5b
+			border-top: 1px solid #232323
+			box-shadow: 0 0 1px #232323, 0 0 1px #5b5b5b
+			a
+				position: relative
+				font-size: 1em
+				padding: 10px
+				display: block
+				&:before
+					content: ''
+					position: absolute
+					left: 0
+					top: 0
+					bottom: 0
+					width: 0
+					background-color: $base-bg-color-second
+				&:hover, &.active
+					background-color: #000
+					&:before
+						width: 3px
+		&--subtitle
+			padding: 10px 15px
+			h3
+				+font(2em, 1, inherit, ($base-font-family-second))
+				font-weight: 400
+				letter-spacing: 5px
+				text-transform: uppercase
+				&:first-letter
+					color: $base-bg-color-second
+					font-weight: 600
+			p
+				font-size: 1em
+				line-height: 1.3
+	.all .all,
+	.politic .politic,
+	.economy .economy,
+	.technology .technology,
+	.world .world,
+	.auto .auto,
+	.sport .sport
+		background-color: #000
+		&:before
+			width: 3px
+	&__currency
+		margin-top: 30px
+		margin-bottom: 30px
+		li
+			padding: 10px
+		.fa
+			font-size: 1.2em
+		&-weather
+			padding-left: 20px !important
+			padding-right: 20px !important
+			position: relative
+			+display-flex(row, nowrap)
+			+align-items(center)
+			+justify-content(space-between)
+			.fa
+				width: auto
+			.fa.fa-cloud
+				font-size: 3.5em
+			.fa.fa-sun-o
+				color: yellow
+				font-size: 2.5em
+				position: absolute
+				left: 40px
+				top: 7px
+			h2
+				font-size: 2.5em
+				font-weight: 300
+	&__info
+		a, p
+			display: block
+			padding: 0 0 15px 10px
+.show
+	left: 0
+.hide
+	left: -270px
