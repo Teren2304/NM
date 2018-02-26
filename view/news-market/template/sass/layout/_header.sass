@@ -1,0 +1,140 @@
+.header
+	width: 100%
+	.container
+		z-index: 9
+		padding: 10px 0
+		background-color: rgba(255,255,255,0.95)
+		position: relative
+		&:after
+			content: ''
+			background-color: #000
+			height: 2px
+			left: 10px
+			right: 10px
+			bottom: 0
+			position: absolute
+		.wrapper__box
+			+display-flex(row, nowrap)
+			+justify-content(space-between)
+			+align-items(center)
+			padding: 5px 15px
+		.search
+			position: relative
+			border: 1px solid $base-text-color-second
+			background-color: #f4f4f4
+			min-width: 320px
+			form
+				+display-flex(row, nowrap)
+			&__field
+				outline: none
+				border: none
+				border-right: 1px solid $base-text-color-second
+				padding: 5px 10px
+				+flex-grow(1)
+			&__icon
+				outline: none
+				border: none
+				color: $base-text-color-second
+				background-color: #f4f4f4
+				width: 40px
+				+border-radius(0)
+				&:before
+					content: "\f002"
+					font-family: "FontAwesome"
+				&:hover
+					background-color: darken(#f4f4f4, 5%)
+		/* ul
+			li
+				display: inline-block
+				vertical-align: middle
+				margin-right: 10px
+				&:last-child
+					margin-right: 0 */
+		
+		.sort-list, .search-list
+			li
+				display: inline-block
+				vertical-align: middle
+		.search-list
+			li
+				a
+					display: block
+					padding: 5px 10px
+					color: darken($base-bg-color-second, 10%)
+					text-decoration: underline
+					position: relative
+					word-break: break-word
+		.sort-list
+			white-space: nowrap
+			.btn
+				color: #000
+				background-color: #d4d4d4
+				+box-shadow(0, 1px, 0, 0, darken(#d4d4d4, 20%))
+				&:hover
+					background-color: $base-bg-color-second
+					+box-shadow(0, 1px, 0, 0, darken($base-bg-color-second, 20%))
+					color: #fff
+			&.all .all,
+			&.minute .minute,
+			&.hours .hours,
+			&.day .day,
+			&.week .week
+				color: #fff
+				background-color: $base-bg-color-second
+				+box-shadow(0, 1px, 0, 0, darken($base-bg-color-second, 20%))	
+			.disabled
+				pointer-events: none
+
+
+@media (max-width: 400px)
+	.header
+		.container
+			.search
+				min-width: auto!important
+				max-width: 100%
+			.sort-list
+				width: 100%
+				text-align: center
+				font-size: 0
+				li
+					margin: 0 2px
+					font-size: 14px
+					.btn
+						padding: 5px
+
+@media (max-width: 575px)
+	.header
+		padding: 0
+		.container
+			&:after
+				left: 0
+				right: 0
+			.wrapper__box
+				padding: 5px 
+				&:last-child
+					+display-flex(column, wrap)
+					.search-list
+						margin-top: 10px
+			.logo
+				&__icon
+					margin-right: 0
+				&__text
+					display: none	
+			.search
+				margin: 0px 5px
+				min-width: 250px
+				&__icon
+					width: 30px
+			
+@media (min-width: 576px) and (max-width: 767px)
+	.header
+		.container
+			.wrapper__box
+				padding: 5px 10px
+				&:last-child
+					+display-flex(column, wrap)
+					.search-list
+						margin-top: 5px
+			.search
+				min-width: 240px
+			
