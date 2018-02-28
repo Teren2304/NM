@@ -1,0 +1,104 @@
+.menu
+	position: fixed
+	z-index: 2
+	left: 0
+	top: 0
+	bottom: 0
+	width: 270px
+	background-image: url('../img/header_bg.png')
+	color: #d9d9d9
+	overflow-x: hidden
+	overflow-y: auto
+	+transition(all .7s ease)
+	+display-flex(column, nowrap)
+	+justify-content(space-between)
+	&::-webkit-scrollbar 
+		width: 0
+		background-color: transparent
+	a
+		color: inherit
+	&__category
+		border-bottom: 1px solid #232323
+	&__item
+		border-bottom: 1px solid #5b5b5b
+		border-top: 1px solid #232323
+		box-shadow: 0 0 1px #232323, 0 0 1px #5b5b5b
+		&:first-child
+			border-top: none
+			padding: 10px 15px
+	&__title
+		+font(2em, 1, inherit, ($base-font-family-second))
+		font-weight: 400
+		letter-spacing: 5px
+		text-transform: uppercase
+		&:first-letter
+			color: $base-bg-color-second
+			font-weight: 600
+	&__text
+		font-size: 1em
+		line-height: 1.3
+	&__link
+		position: relative
+		font-size: 1em
+		padding: 10px
+		display: block
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			width: 0
+			background-color: $base-bg-color-second
+		&:hover
+			background-color: #000
+			&:before
+				width: 3px
+
+	.all .all,
+	.politic .politic,
+	.economy .economy,
+	.technology .technology,
+	.world .world,
+	.auto .auto,
+	.sport .sport
+		background-color: #000
+		&:before
+			width: 3px
+.currency
+	margin-top: 30px
+	margin-bottom: 30px
+	&__item
+		padding: 10px
+	&__weather
+		padding-left: 20px
+		padding-right: 20px
+		position: relative
+		+display-flex(row, nowrap)
+		+align-items(center)
+		+justify-content(space-between)
+		.fa
+			width: auto
+		.fa.fa-cloud
+			font-size: 3.5em
+		.fa.fa-sun-o
+			color: yellow
+			font-size: 2.5em
+			position: absolute
+			left: 50px
+			top: 0
+	&__title
+		font-size: 2.5em
+		font-weight: 300
+	.icon
+		font-size: 1.2em
+.info
+	&__item
+		padding: 10px
+	&__text, &__link
+		display: block
+
+.showMenu
+	left: 0
+.hideMenu
+	left: -270px
